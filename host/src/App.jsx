@@ -4,12 +4,12 @@ import ReactDOM from "react-dom/client";
 import "./index.scss";
 import SafeComponent from "./SafeComponent";
 
-const Widget = React.lazy(() => import("catalog/Widget"));
+// const Widget = React.lazy(() => import("catalog/Widget"));
 const App = () => (
-  <div className="bg-red-500 w-full h-full">
+  <div className="w-full h-full">
     <SafeComponent>
       <Suspense>
-        <Widget />
+        <div>hosst page tendrá headers, etc.</div>
       </Suspense>
     </SafeComponent>
   </div>

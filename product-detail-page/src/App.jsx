@@ -1,19 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "./index.scss";
+import PDPContent from "./ProductContent";
 
 const App = () => (
-  <div className="mt-10 text-3xl mx-auto max-w-6xl">
-    <div>Name: product-detail-page</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Tailwind</div>
-  </div>
+  <Router>
+    <div className="mt-10 text-3xl mx-auto max-w-6xl">
+      <div>
+        <Routes>
+          <Route path="/products/:id" Component={PDPContent} />
+        </Routes>
+      </div>
+    </div>
+  </Router>
 );
-const rootElement = document.getElementById("app")
-if (!rootElement) throw new Error("Failed to find the root element")
+const rootElement = document.getElementById("app");
+if (!rootElement) throw new Error("Failed to find the root element");
 
-const root = ReactDOM.createRoot(rootElement)
+const root = ReactDOM.createRoot(rootElement);
 
-root.render(<App />)
+root.render(<App />);
