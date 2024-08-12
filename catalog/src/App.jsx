@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Widget from "./components/Widget";
 import "./index.scss";
+import HomeContent from "./HomeContent";
 
 const App = () => (
   <div className="mt-10 text-3xl mx-auto max-w-6xl">
-    <Widget />
+    <HomeContent />
   </div>
 );
 const rootElement = document.getElementById("app");
