@@ -67,8 +67,11 @@ module.exports = (_, argv) => ({
       remotes: {
         catalog: "catalog@http://localhost:8081/remoteEntry.js",
         addtocart: "addtocart@http://localhost:8085/remoteEntry.js",
+        host: "host@http://localhost:8080/remoteEntry.js",
       },
-      exposes: {},
+      exposes: {
+        "./ProductContent": "./src/ProductContent.jsx",
+      },
       shared: {
         ...deps,
         react: {

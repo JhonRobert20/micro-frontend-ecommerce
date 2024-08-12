@@ -5,24 +5,24 @@ import "remixicon/fonts/remixicon.css";
 import Header from "./Header";
 import "./index.scss";
 import SafeComponent from "./SafeComponent";
-import HomeContent from "catalog/HomeContent";
+import MainLayout from "./MainLayout";
 
-// const Widget = React.lazy(() => import("catalog/Widget"));
-const App = () => (
-  // < className="w-full h-full">
-  //   <SafeComponent>
-  //     <Suspense>
-  //       <div>hosst page tendrá headers, etc.</div>
-  //     </Suspense>
-  //   </SafeComponent>
-  <>
-    <Header />
-    <HomeContent />
-  </>
-);
+// // const Widget = React.lazy(() => import("catalog/Widget"));
+// const App = () => (
+//   // < className="w-full h-full">
+//   //   <SafeComponent>
+//   //     <Suspense>
+//   //       <div>hosst page tendrá headers, etc.</div>
+//   //     </Suspense>
+//   //   </SafeComponent>
+//   // <>
+//   //   <HomeContent />
+//   // </>
+
+// );
 const rootElement = document.getElementById("app");
 if (!rootElement) throw new Error("Failed to find the root element");
 
 const root = ReactDOM.createRoot(rootElement);
 
-root.render(<App />);
+root.render(<MainLayout />);

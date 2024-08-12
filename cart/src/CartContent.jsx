@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { cart, clearCart } from "cart/cart";
 import { currency } from "catalog/products";
+import Header from "host/Header";
 
 export default function CartContent() {
   const [items, setItems] = useState([]);
@@ -13,6 +14,7 @@ export default function CartContent() {
 
   return (
     <>
+      <Header />
       <div className="my-10 grid grid-cols-4 gap-5">
         {items.map((item) => (
           <React.Fragment key={item.id}>

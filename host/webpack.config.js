@@ -70,7 +70,9 @@ module.exports = (_, argv) => ({
         checkout: "checkout@http://localhost:8083/remoteEntry.js",
         pdp: "product_detail_page@http://localhost:8084/remoteEntry.js",
       },
-      exposes: {},
+      exposes: {
+        "./Header": "./src/Header.jsx",
+      },
       shared: {
         ...deps,
         react: {
