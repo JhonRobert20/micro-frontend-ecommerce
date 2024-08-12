@@ -9,7 +9,7 @@ const printCompilationMessage = require("./compilation.config.js");
 
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:8084/",
+    publicPath: "http://localhost:8085/",
   },
 
   resolve: {
@@ -17,7 +17,7 @@ module.exports = (_, argv) => ({
   },
 
   devServer: {
-    port: 8084,
+    port: 8085,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
     onListening: function (devServer) {
@@ -62,13 +62,15 @@ module.exports = (_, argv) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "product_detail_page",
+      name: "addtocart",
       filename: "remoteEntry.js",
       remotes: {
-        catalog: "catalog@http://localhost:8081/remoteEntry.js",
-        addtocart: "addtocart@http://localhost:8085/remoteEntry.js",
+        cart: "cart@http://localhost:8082/remoteEntry.js",
       },
-      exposes: {},
+      exposes: {
+        "./addToCart": "./src/AddToCart.jsx",
+        "./placeAddToCart": "./src/placeAddToCart.js",
+      },
       shared: {
         ...deps,
         react: {
