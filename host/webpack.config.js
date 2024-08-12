@@ -68,6 +68,7 @@ module.exports = (_, argv) => ({
         catalog: "catalog@http://localhost:8081/remoteEntry.js",
         cart: "cart@http://localhost:8082/remoteEntry.js",
         checkout: "checkout@http://localhost:8083/remoteEntry.js",
+        pdp: "product_detail_page@http://localhost:8084/remoteEntry.js",
       },
       exposes: {},
       shared: {
