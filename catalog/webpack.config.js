@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
 
@@ -13,7 +14,7 @@ module.exports = (_, argv) => ({
   },
 
   resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+    extensions: [".tsx", ".ts", ".jsx", ".js", ".json", ".scss"],
   },
 
   devServer: {
@@ -48,7 +49,12 @@ module.exports = (_, argv) => ({
       },
       {
         test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader", // Compila SCSS a CSS
+        ],
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,
@@ -88,5 +94,8 @@ module.exports = (_, argv) => ({
       template: "./src/index.html",
     }),
     new Dotenv(),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css",
+    }),
   ],
 });
