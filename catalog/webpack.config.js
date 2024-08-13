@@ -69,7 +69,7 @@ module.exports = (_, argv) => ({
         host: "host@http://localhost:8080/remoteEntry.js",
       },
       exposes: {
-        "./products": "./src/products.js",
+        "./products": "./src/data/products.js",
         "./HomeContent": "./src/components/HomeContent.jsx",
       },
       shared: {
