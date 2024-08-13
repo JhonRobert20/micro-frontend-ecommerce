@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import "remixicon/fonts/remixicon.css";
 import "./index.scss";
 
-import CartContent from "./CartContent";
+import CartContent from "./pages/CartContent";
 
 const App = () => (
   <div className="mt-10 text-3xl mx-auto max-w-6xl">

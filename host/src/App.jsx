@@ -5,7 +5,7 @@ import "remixicon/fonts/remixicon.css";
 import Header from "./Header";
 import "./index.scss";
 import SafeComponent from "./SafeComponent";
-import MainLayout from "./MainLayout";
+import { MainLayout } from "./MainLayout";
 
 // // const Widget = React.lazy(() => import("catalog/Widget"));
 // const App = () => (
