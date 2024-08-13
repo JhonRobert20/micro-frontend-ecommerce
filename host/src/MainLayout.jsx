@@ -1,28 +1,23 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "remixicon/fonts/remixicon.css";
 
-import "./index.scss";
-import Header from "./Header";
 import PDPContent from "pdp/ProductContent";
 import HomeContent from "catalog/HomeContent";
 import CartContent from "cart/CartContent";
+import NavBar from "./components/NavBar";
 
-export default function MainLayout() {
+export function MainLayout() {
   return (
-    <>
-      <Router>
-        <div className="mt-10 text-3xl mx-auto max-w-6xl">
-          <div>
-            <Routes>
-              <Route exact path="/" Component={HomeContent} />
-              <Route path="/products/:id" Component={PDPContent} />
-              <Route path="/cart" Component={CartContent} />
-            </Routes>
-          </div>
-        </div>
-      </Router>
-    </>
+    <Router>
+      <NavBar />
+      <div class="container mx-auto mb-4">
+        <Routes>
+          <Route exact path="/" Component={HomeContent} />
+          <Route path="/products/:id" Component={PDPContent} />
+          <Route path="/cart" Component={CartContent} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
