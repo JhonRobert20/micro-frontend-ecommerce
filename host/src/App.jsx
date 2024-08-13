@@ -2,7 +2,6 @@ import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 
 import "remixicon/fonts/remixicon.css";
-import Header from "./Header";
 import "./index.scss";
 import SafeComponent from "./SafeComponent";
 import { MainLayout } from "./MainLayout";

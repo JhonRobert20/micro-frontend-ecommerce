@@ -70,7 +70,7 @@ module.exports = (_, argv) => ({
       },
       exposes: {
         "./products": "./src/products.js",
-        "./HomeContent": "./src/HomeContent.jsx",
+        "./HomeContent": "./src/components/HomeContent.jsx",
       },
       shared: {
         ...deps,

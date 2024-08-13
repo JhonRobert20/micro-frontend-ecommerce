@@ -1,1 +1,5 @@
-export const NAV_BAR = ["Dashboard", "Team", "Projects", "Calendar"];
+export const NAV_BAR = [
+  { name: "cart", link: "cart" },
+  { name: "Products", link: "products" },
+  { name: "home", link: "/" },
+];
