@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import { currency, getProducts, getProductById } from "./products";
+import { currency, getProducts, getProductById } from "../products";
 import { addToCart, useLoggedIn } from "cart/cart";
-import Header from "host/Header";
 
 export default function HomeContent() {
   const loggedIn = useLoggedIn();
@@ -14,7 +13,6 @@ export default function HomeContent() {
 
   return (
     <>
-      <Header />
       <div className="my-10 grid grid-cols-4 gap-5">
         {products.map((product) => (
           <div key={product.id}>

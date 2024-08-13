@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.scss";
 import "remixicon/fonts/remixicon.css";
 
-import HomeContent from "./HomeContent";
+import HomeContent from "./components/HomeContent";
 
 const App = () => (
   <div className="mt-10 text-3xl mx-auto max-w-6xl">
