@@ -11,7 +11,7 @@ export function MainLayout() {
   return (
     <Router>
       <NavBar />
-      <div class="container mx-auto mb-4">
+      <div className="container mx-auto mb-4">
         <Routes>
           <Route exact path="/" Component={HomeContent} />
           <Route path="/products/:id" Component={PDPContent} />

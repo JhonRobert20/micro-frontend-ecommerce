@@ -22,11 +22,11 @@ export default function MiniCart() {
     <>
       <button
         type="button"
-        class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+        className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
         onClick={() => setShowCart(!showCart)}
       >
-        <span class="absolute -inset-1.5"></span>
-        <span class="sr-only">Cart</span>
+        <span className="absolute -inset-1.5"></span>
+        <span className="sr-only">Cart</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
