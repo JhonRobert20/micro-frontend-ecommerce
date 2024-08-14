@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import { cart, clearCart } from "cart/cart";
-import { currency } from "catalog/products";
 import { useShoppingCart } from "../hooks/hooks";
+import { formatCurrency } from "catalog/formatCurrency";
 
 export default function CartContent() {
-  const { items } = useShoppingCart();
+  const { items, cartTotalPrice } = useShoppingCart();
 
   return (
     <>
@@ -16,7 +16,7 @@ export default function CartContent() {
             <img src={item.image} alt={item.name} className="max-h-6" />
             <div>{item.name}</div>
             <div className="text-right">
-              {currency.format(item.quantity * item.price)}
+              {formatCurrency(item.quantity * item.price)}
             </div>
           </React.Fragment>
         ))}
@@ -24,7 +24,7 @@ export default function CartContent() {
         <div></div>
         <div></div>
         <div className="text-right" id="grand_total">
-          {currency.format(items.reduce((a, v) => a + v.quantity * v.price, 0))}
+          {cartTotalPrice}
         </div>
       </div>
       {items.length > 0 && (
