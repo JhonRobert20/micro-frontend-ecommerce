@@ -10,7 +10,7 @@ export default function MiniCart() {
 
   return (
     <div className="container">
-      <DialogDemo items={cartQuantity} />
+      <DialogDemo cartQuantity={cartQuantity} />
     </div>
   );
 }
