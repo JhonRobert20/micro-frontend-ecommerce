@@ -1,28 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { cart } from "cart/cart";
+import { formatCurrency } from "catalog/formatCurrency";
 
+//usar quizás prevItems
 export function useShoppingCart() {
   const [items, setItems] = useState([]);
+  const [simplifiedItems, setSimplifiedItems] = useState([]);
 
   useEffect(() => {
     cart.subscribe((value) => {
+      const items = value?.cartItems ?? [];
       const simplifiedItems =
         value?.cartItems.map((item) => ({
           id: item.id,
           quantity: item.quantity,
         })) ?? [];
-
-      setItems(simplifiedItems);
+      setItems(items);
+      setSimplifiedItems(simplifiedItems);
     });
   }, []);
 
   function getItemQuantity(id) {
-    return items.find((item) => item.id === id)?.quantity || 0;
+    return simplifiedItems.find((item) => item.id === id)?.quantity || 0;
   }
 
   function increaseCartQuantity(id) {
     //we don't have an item
-    setItems((currItem) => {
+    setSimplifiedItems((currItem) => {
       if (currItem.find((item) => item.id === id) == null) {
         return [...currItem, { id, quantity: 1 }];
       } else {
@@ -39,7 +43,7 @@ export function useShoppingCart() {
 
   function decreaseCartQuantity(id) {
     //we have just 1 quantity so remove it
-    setItems((currItem) => {
+    setSimplifiedItems((currItem) => {
       if (currItem.find((item) => item.id === id)?.quantity === 1) {
         return currItem.filter((item) => item.id !== id);
       } else {
@@ -55,10 +59,19 @@ export function useShoppingCart() {
   }
 
   function removeQuantity(id) {
-    setItems((currItem) => {
+    setSimplifiedItems((currItem) => {
       return currItem.filter((item) => item.id !== id);
     });
   }
+
+  const cartQuantity = simplifiedItems.reduce(
+    (quantity, item) => item.quantity + quantity,
+    0
+  );
+
+  const cartTotalPrice = formatCurrency(
+    items.reduce((a, v) => a + v.quantity * v.price, 0)
+  );
 
   return {
     items,
@@ -66,5 +79,8 @@ export function useShoppingCart() {
     increaseCartQuantity,
     decreaseCartQuantity,
     removeQuantity,
+    cartQuantity,
+    cartTotalPrice,
+    simplifiedItems,
   };
 }
