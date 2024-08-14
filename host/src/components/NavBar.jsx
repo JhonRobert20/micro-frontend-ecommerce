@@ -62,6 +62,7 @@ export default function NavBar() {
                 {NAV_BAR.map((url) => {
                   return (
                     <a
+                      key={url.link}
                       href={url.link}
                       className="rounded-md hover:bg-gray-900 px-3 py-2 text-sm font-medium text-white hover:text-white"
                       aria-current="page"
