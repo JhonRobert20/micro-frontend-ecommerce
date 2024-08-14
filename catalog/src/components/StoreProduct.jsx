@@ -23,7 +23,7 @@ function ActionIcon({ onClick, iconPath, label }) {
 
 function ProductInfo({ name, price }) {
   return (
-    <section className="flex justify-between py-6 items-baseline">
+    <section className="flex justify-between pt-6 items-baseline">
       <p className="text-md">{name}</p>
       <span className="text-sm opacity-60">{formatCurrency(price)}</span>
     </section>
@@ -43,12 +43,11 @@ export function StoreProduct({ image, name, price, id, type }) {
   };
   return (
     <>
-      <section className="flex items-center justify-center relative">
+      <section className="flex items-center justify-end relative">
         <span className="absolute top-0 left-0 bg-[#800000] px-2 py-1.5 text-white rounded-sm text-xs">
           {type}
         </span>
         <img
-          width={250}
           src={image}
           alt={`${name} product image`}
           className="object-cover"
