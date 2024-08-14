@@ -77,6 +77,7 @@ module.exports = (_, argv) => ({
       exposes: {
         "./products": "./src/data/products.js",
         "./HomeContent": "./src/components/HomeContent.jsx",
+        "./formatCurrency": "./src/lib/utils/formatCurrency.js",
       },
       shared: {
         ...deps,
