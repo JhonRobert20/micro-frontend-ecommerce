@@ -63,6 +63,10 @@ module.exports = (_, argv) => ({
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.(png|svg|jpg)$/,
+        use: ["file-loader"],
+      },
     ],
   },
 
