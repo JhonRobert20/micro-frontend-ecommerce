@@ -80,7 +80,9 @@ module.exports = (_, argv) => ({
         checkout: "checkout@http://localhost:8083/remoteEntry.js",
         pdp: "product_detail_page@http://localhost:8084/remoteEntry.js",
       },
-      exposes: {},
+      exposes: {
+        "./MaxWidthWrapper": "./src/components/UI/MaxWidthWrapper.jsx",
+      },
       shared: {
         ...deps,
         react: {
