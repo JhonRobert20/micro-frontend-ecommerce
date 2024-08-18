@@ -8,14 +8,14 @@ import CartContent from "cart/CartContent";
 import NavBar from "./components/NavBar/NavBar";
 import NotFound from "./pages/NotFound";
 import UploadFile from "./pages/UploadFile";
-
 import Home from "./pages/Home";
+
 export function MainLayout({ children }) {
   return (
     <Router>
       <NavBar />
       <Routes>
-        <Route exact path="/" Component={HomeContent} />
+        <Route exact path="/" Component={Home} />
         <Route path="/products/:id" Component={PDPContent} />
         <Route path="/cart" Component={CartContent} />
         <Route path="/404" element={<NotFound />} />
