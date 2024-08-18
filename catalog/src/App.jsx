@@ -8,7 +8,7 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 
-import HomeContent from "./components/HomeContent";
+import HomeContent from "./pages/HomeContent";
 const queryClient = new QueryClient();
 
 const App = () => (
