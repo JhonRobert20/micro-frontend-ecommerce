@@ -107,13 +107,15 @@ export const CompareSlider = ({
           <div className="w-0.5 h-full absolute top-1/2 -translate-y-1/2 left-0  z-20 bg-[#f7f3ed]" />
           <div className="w-10 h-1/2 [mask-image:radial-gradient(50px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 z-10 opacity-100 " />
           <div className=" rounded-full ring-2 ring-slate-100 top-1/2 -translate-y-1/2 bg-[#f7f3ed] z-30 left-1/2 -translate-x-1/2 absolute flex items-center justify-center h-20 w-20 hover:scale-105">
-            <ChevronLeft className=" w-4 h-4 absolute top-1/2 -translate-y-1/2 right-[70%] -translate-x-1/2 " />
-            <ChevronRight className=" w-4 h-4 absolute top-1/2 -translate-y-1/2 right-[-10%] -translate-x-1/2 " />
-            <img
-              className="h-14 w-14 overflow-hidden rounded-full hover:scale-110"
-              src={slider_hero_section}
-              draggable={false}
-            />
+            <ChevronLeft className="text-[#1C1C1C] w-4 h-4 absolute top-1/2 -translate-y-1/2 right-[70%] -translate-x-1/2 " />
+            <ChevronRight className="text-[#1C1C1C] w-4 h-4 absolute top-1/2 -translate-y-1/2 right-[-10%] -translate-x-1/2 " />
+            <div className="hover:scale-110 transition-transform duration-500 flex items-center justify-center rounded-full h-20 w-20">
+              <img
+                className="h-14 w-14 overflow-hidden rounded-full outline-none "
+                src={slider_hero_section}
+                draggable={false}
+              />
+            </div>
           </div>
         </motion.div>
 
