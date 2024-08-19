@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { login, useLoggedIn } from "./cart";
+import { User } from "lucide-react";
 
 export default function Login() {
   const loggedIn = useLoggedIn();
@@ -15,7 +16,7 @@ export default function Login() {
     <>
       <button
         type="button"
-        className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+        className="relative flex rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#1C1C1C]"
         id="user-menu-button"
         aria-expanded="false"
         aria-haspopup="true"
@@ -23,11 +24,7 @@ export default function Login() {
       >
         <span className="absolute -inset-1.5"></span>
         <span className="sr-only">Open user menu</span>
-        <img
-          className="h-8 w-8 rounded-full"
-          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-          alt=""
-        />
+        <User className="text-[#1C1C1C]" />
       </button>
 
       {showLogin && (
