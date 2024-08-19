@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react";
 //habría que pasar images como props (sustituir images por props)
 
 //añadir opacidad y transition a las images cuando se creen
+
 export function Carousel(props) {
-  const images = ["winebottle1.jpg", "image32.jpg", "image30.jpg"];
+  const images = ["Screenshot.png", "winebottle3.jpg", "Screenshot.png"];
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState(images[0]);
 
@@ -44,7 +45,7 @@ export function Carousel(props) {
     <>
       <img
         className="max-w-[500px] w-full h-auto opacity-1 "
-        src={require(`../assets/img/${selectedImage}`).default}
+        src={require(`../assets/${selectedImage}`).default}
         alt="imagen"
       />
       {props.showBtns && (
