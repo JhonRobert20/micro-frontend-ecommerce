@@ -1,10 +1,10 @@
-import MaxWidthWrapper from "../components/UI/MaxWidthWrapper";
-import { RightSideHeroSection } from "../components/HeroSection/RightSideHeroSection";
-import { LeftSideHeroSection } from "../components/HeroSection/LeftSideHeroSection";
+import MaxWidthWrapper from "../../components/UI/MaxWidthWrapper";
+import { RightSideHeroSection } from "../../components/HeroSection/RightSideHeroSection";
+import { LeftSideHeroSection } from "../../components/HeroSection/LeftSideHeroSection";
 import winebottleImage from "../assets/winebottle3.jpg";
-import { CustomerReviewSection } from "../components/UserReviews/CustomerReviewSection";
+import { CustomerReviewSection } from "../../components/UserReviews/CustomerReviewSection";
 import { ArrowRight, Check } from "lucide-react";
-import Phone from "../components/HeroSection/Phone";
+import Phone from "../../components/HeroSection/Phone";
 import Link from "react-router-dom";
 function Home() {
   return (

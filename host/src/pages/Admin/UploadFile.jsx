@@ -1,8 +1,8 @@
 import React, { useState, useTransition } from "react";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 import Dropzone, { FileRejection } from "react-dropzone";
 import { Image, Loader2, MousePointerSquareDashed } from "lucide-react";
-import { Progress } from "../components/UI/Progress";
+import { Progress } from "../../components/UI/Progress";
 
 export default function UploadFile() {
   const [isDragOver, setIsDragOver] = useState(false);

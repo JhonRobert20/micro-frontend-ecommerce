@@ -1,5 +1,4 @@
 import React from "react";
-import NotFound from "./NotFound";
 import {
   BrowserRouter as Router,
   Route,

@@ -2,9 +2,10 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "../../lib/utils";
-import slider_hero_section from "../../assets/slider_hero_section.jpg";
+import slider_hero_section from "../../assets/slider.svg";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-export const Compare = ({
+
+export const CompareSlider = ({
   firstImage = "",
   secondImage = "",
   className,
@@ -103,13 +104,13 @@ export const Compare = ({
           }}
           transition={{ duration: 0 }}
         >
-          <div className="w-36 h-full  absolute top-1/2 -translate-y-1/2 left-0  z-20 opacity-50" />
-          <div className="w-10 h-1/2 [mask-image:radial-gradient(50px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 z-10 opacity-100" />
-          <div className="rounded-full ring-2 ring-slate-100 top-1/2 -translate-y-1/2 bg-white z-30 left-1/2 -translate-x-1/2 absolute flex items-center justify-center h-24 w-24">
-            <ChevronLeft className=" w-8 h-8 absolute top-1/2 -translate-y-1/2 right-[58%] -translate-x-1/2 " />
-            <ChevronRight className="w-8 h-8 absolute top-1/2 -translate-y-1/2 right-[-23%] -translate-x-1/2 " />
+          <div className="w-0.5 h-full absolute top-1/2 -translate-y-1/2 left-0  z-20 bg-[#f7f3ed]" />
+          <div className="w-10 h-1/2 [mask-image:radial-gradient(50px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 z-10 opacity-100 " />
+          <div className=" rounded-full ring-2 ring-slate-100 top-1/2 -translate-y-1/2 bg-[#f7f3ed] z-30 left-1/2 -translate-x-1/2 absolute flex items-center justify-center h-20 w-20 hover:scale-105">
+            <ChevronLeft className=" w-4 h-4 absolute top-1/2 -translate-y-1/2 right-[70%] -translate-x-1/2 " />
+            <ChevronRight className=" w-4 h-4 absolute top-1/2 -translate-y-1/2 right-[-10%] -translate-x-1/2 " />
             <img
-              className="h-[inherit] overflow-hidden rounded-full"
+              className="h-14 w-14 overflow-hidden rounded-full hover:scale-110"
               src={slider_hero_section}
               draggable={false}
             />
@@ -141,6 +142,9 @@ export const Compare = ({
                 )}
                 draggable={false}
               />
+              <button className="z-50 bg-[#f7f3ed] w-5 h-5 absolute top-0 right-0">
+                Click
+              </button>
             </motion.div>
           ) : null}
         </AnimatePresence>
