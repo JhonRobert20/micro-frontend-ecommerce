@@ -10,22 +10,16 @@ export default function NavBar() {
   //.env ADMIN_EMAIL=hello@admin.com
   // const isAdmin = user?.email = process.env.ADMIN_EMAIL
   return (
-    <nav className="sticky z-20 h-14 inset-x-0 top-0 w-full border-b border-gray-200 bg-gray/75 backdrop-blur-lg transition-all">
+    <nav className="sticky z-20 top-0 w-full border-b border-gray-200 bg-gray/75 backdrop-blur-lg transition-all h-16 shadow-sm">
       <MaxWidthWrapper>
-        <div className=" h-14 flex items-center justify-between">
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <img
-              className="flex flex-shrink-0 h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-              alt="Your Company"
-            />
-
+        <div className="h-16 flex items-center justify-between">
+          <div className="flex items-center justify-center sm:items-stretch sm:justify-start gap-9">
             {NAV_BAR.map((url) => {
               return (
                 <a
                   key={url.link}
                   href={url.link}
-                  className="rounded-md hover:bg-gray-900 px-3 py-2 text-sm font-medium text-black hover:text-white"
+                  className="text-sm font-medium text-[#1C1C1C] relative w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-[#1C1C1C] after:w-full after:scale-x-0 after:mt-5 after:hover:scale-x-100 after:transition after:duration-200 after:origin-center"
                   aria-curren={url.name}
                 >
                   {url.name}
