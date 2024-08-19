@@ -82,6 +82,7 @@ module.exports = (_, argv) => ({
         "./products": "./src/data/products.js",
         "./HomeContent": "./src/pages/HomeContent.jsx",
         "./formatCurrency": "./src/lib/utils/formatCurrency.js",
+        "./carouselCards": "./src/components/CarouselCards/index.jsx",
       },
       shared: {
         ...deps,
