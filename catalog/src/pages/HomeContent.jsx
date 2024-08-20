@@ -3,6 +3,7 @@ import Card from "../components/Card";
 import { getProducts, getProductById } from "../data/products";
 import CarouselCards from "../components/CarouselCards";
 import { Carousel } from "../components/Carousel";
+
 export default function HomeContent() {
   const [products, setProducts] = useState([]);
 
@@ -13,7 +14,7 @@ export default function HomeContent() {
   return (
     <>
       <Card />
-      <CarouselCards />
+      {/* <CarouselCards /> */}
       {/* <Carousel autoPlay={true} showBtns={false} /> */}
     </>
   );
