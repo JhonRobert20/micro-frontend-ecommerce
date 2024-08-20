@@ -6,6 +6,8 @@ import CarouselCards from "catalog/carouselCards";
 import { CustomerReviewSection } from "../../components/UserReviews/CustomerReviewSection";
 import HeaderSection from "../../components/HeaderSection";
 
+import { PRODUCTS_FOR_SALE, ITEMS } from "../../lib/constants";
+
 function Home() {
   return (
     <>
@@ -28,7 +30,7 @@ function Home() {
             strongTitle={"Productos"}
             subtitleHeader={"descubre"}
           />
-          <CarouselCards />
+          <CarouselCards data={PRODUCTS_FOR_SALE} />
         </MaxWidthWrapper>
       </section>
 
@@ -45,30 +47,18 @@ function Home() {
       {/* ----- PRODUCTS DEFINITION SECTION ------------------- */}
       <section className="relative">
         <MaxWidthWrapper className="py-24">
-          {/* <HeaderSection
-            className={"pb-12"}
-            titleHeader={"Nuestros "}
-            strongTitle={"Productos"}
-            subtitleHeader={"descubre"}
-          /> */}
           <h2 className="text-2xl">Nuestros productos</h2>
 
-          <CarouselCards />
+          <CarouselCards data={ITEMS} />
         </MaxWidthWrapper>
       </section>
 
       {/* ----- PRODUCTS DEFINITION SECTION ------------------- */}
       <section className="relative">
         <MaxWidthWrapper className="py-24">
-          {/* <HeaderSection
-            className={"pb-12"}
-            titleHeader={"Nuestros "}
-            strongTitle={"Productos"}
-            subtitleHeader={"descubre"}
-          /> */}
           <h2 className="text-2xl">Nuestros productos</h2>
 
-          <CarouselCards />
+          <CarouselCards data={ITEMS} />
         </MaxWidthWrapper>
       </section>
 
@@ -78,7 +68,7 @@ function Home() {
         <MaxWidthWrapper className="">
           <h2 className="text-2xl">Nuestros productos</h2>
 
-          <CarouselCards />
+          <CarouselCards data={ITEMS} />
         </MaxWidthWrapper>
       </section>
 
