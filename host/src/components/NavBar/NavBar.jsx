@@ -1,6 +1,6 @@
 import React from "react";
 import { NAV_BAR } from "../../lib/constants";
-import MiniCart from "cart/MiniCart";
+import Cart from "cart/Cart";
 import Login from "cart/Login";
 import MaxWidthWrapper from "../UI/MaxWidthWrapper";
 
@@ -28,7 +28,7 @@ export default function NavBar() {
             })}
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <MiniCart />
+            <Cart />
             <div className="relative ml-3">
               <Login />
             </div>
