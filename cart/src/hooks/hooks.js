@@ -5,18 +5,11 @@ import { formatCurrency } from "catalog/formatCurrency";
 //usar quizás prevItems
 export function useShoppingCart() {
   const [items, setItems] = useState([]);
-  const [simplifiedItems, setSimplifiedItems] = useState([]);
 
   useEffect(() => {
     const subscription = cart.subscribe((value) => {
       const items = value?.cartItems ?? [];
-      const simplifiedItems =
-        value?.cartItems.map((item) => ({
-          id: item.id,
-          quantity: item.quantity,
-        })) ?? [];
       setItems(items);
-      setSimplifiedItems(simplifiedItems);
     });
 
     return () => {
@@ -25,12 +18,12 @@ export function useShoppingCart() {
   }, []);
 
   function getItemQuantity(id) {
-    return simplifiedItems.find((item) => item.id === id)?.quantity || 0;
+    return items.find((item) => item.id === id)?.quantity || 0;
   }
 
   function increaseCartQuantity(id) {
     //we don't have an item
-    setSimplifiedItems((currItem) => {
+    setItems((currItem) => {
       if (currItem.find((item) => item.id === id) == null) {
         return [...currItem, { id, quantity: 1 }];
       } else {
@@ -47,7 +40,7 @@ export function useShoppingCart() {
 
   function decreaseCartQuantity(id) {
     //we have just 1 quantity so remove it
-    setSimplifiedItems((currItem) => {
+    setItems((currItem) => {
       if (currItem.find((item) => item.id === id)?.quantity === 1) {
         return currItem.filter((item) => item.id !== id);
       } else {
@@ -63,12 +56,12 @@ export function useShoppingCart() {
   }
 
   function removeQuantity(id) {
-    setSimplifiedItems((currItem) => {
+    setItems((currItem) => {
       return currItem.filter((item) => item.id !== id);
     });
   }
 
-  const cartQuantity = simplifiedItems.reduce(
+  const cartQuantity = items.reduce(
     (quantity, item) => item.quantity + quantity,
     0
   );
@@ -85,6 +78,5 @@ export function useShoppingCart() {
     removeQuantity,
     cartQuantity,
     cartTotalPrice,
-    simplifiedItems,
   };
 }
