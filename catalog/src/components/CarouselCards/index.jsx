@@ -5,7 +5,6 @@ import { cn } from "../../lib/utils/utils";
 import Card from "../Card";
 
 const CarouselCards = ({ data, initialScroll = 90 }) => {
-  console.log(data, "----data");
   const items = data?.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
   ));
