@@ -11,6 +11,7 @@ const Modal = ({
   footerContent,
   modalClose,
   modalAnimation,
+  border = false,
 }) => (
   <Dialog.Root>
     <Dialog.Trigger>{trigger}</Dialog.Trigger>
@@ -26,12 +27,14 @@ const Modal = ({
       <Dialog.Content className="relative">
         <motion.div {...modalAnimation} className={contentClassName}>
           <section>
-            <Dialog.Title asChild>{title}</Dialog.Title>
+            <Dialog.Title className="w-full flex justify-between items-center border-[1px] border-b-[#f7f3ed]">
+              {title}
+              <Dialog.Close>{modalClose}</Dialog.Close>
+            </Dialog.Title>
             <Dialog.Description asChild>{content}</Dialog.Description>
           </section>
           <Dialog.Close>{footerContent}</Dialog.Close>
         </motion.div>
-        <Dialog.Close>{modalClose}</Dialog.Close>
       </Dialog.Content>
     </Dialog.Portal>
   </Dialog.Root>

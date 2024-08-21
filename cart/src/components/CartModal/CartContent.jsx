@@ -10,7 +10,7 @@ const CartContent = () => {
     useShoppingCart();
 
   return (
-    <section className="flex flex-col items-start gap-6 text-base my-8">
+    <section className="flex flex-col items-start gap-6 text-base my-8 px-8 ">
       {items.map((item, idx) => (
         <motion.article
           key={idx}

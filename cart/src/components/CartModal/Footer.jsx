@@ -3,7 +3,7 @@ import { cn } from "../../lib/utils";
 const ModalFooter = () => {
   const buttons = ["Close", "Save"];
   return (
-    <div className="w-full flex justify-between gap-5">
+    <div className="bg-[#f7f3ed] w-full flex justify-between gap-5 px-8 pb-8 pt-12 border-t-[#D1D9D6] border-[1px]">
       {buttons.map((button, idx) => (
         <motion.div
           key={button.label}
@@ -16,8 +16,8 @@ const ModalFooter = () => {
           className={cn(
             "w-1/2 py-1.5 px-2 font-medium ",
             idx === 1
-              ? "border-[#f7f3ed] border-2 "
-              : "bg-[#f7f3ed]  border-2 border-[#1C1C1C]"
+              ? "bg-[#1F1511] text-[#f7f3ed] "
+              : "border-2 border-[#1F1511]"
           )}
         >
           {button}
