@@ -8,7 +8,6 @@ import { addToCart, useLoggedIn } from "cart/cart";
 export const BlurImage = ({ src, hoverSrc, className, alt, ...rest }) => {
   const [isLoading, setLoading] = useState(true);
   const [isHovered, setHovered] = useState(false);
-  const hoverTimer = useRef(null);
 
   const handleMouseEnter = useCallback(() => {
     setHovered(true);
@@ -52,7 +51,7 @@ const Card = () => {
     }
   };
   return (
-    <button className="relative rounded-md bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start">
+    <div className="relative rounded-md bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start">
       <BlurImage
         src={screenShot}
         hoverSrc={winebottle3}
@@ -99,7 +98,7 @@ const Card = () => {
           </p>
         </div>
       </div>
-    </button>
+    </div>
   );
 };
 
