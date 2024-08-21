@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { cart, clearCart } from "cart/cart";
 import { useShoppingCart } from "../hooks/hooks";
