@@ -4,7 +4,12 @@ import { jwt, addToCart } from "cart/cart";
 const AddToCartButton = ({ id }) => {
   const [loggedIn, setLoggedIn] = useState(false);
 
-  useEffect(() => jwt.subscribe((jwt) => setLoggedIn(!!jwt)), []);
+  useEffect(() => {
+    const subscription = jwt.subscribe((jwt) => setLoggedIn(!!jwt));
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, []);
   return (
     <>
       {loggedIn && (

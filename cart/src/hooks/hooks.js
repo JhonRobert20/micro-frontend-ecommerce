@@ -8,7 +8,7 @@ export function useShoppingCart() {
   const [simplifiedItems, setSimplifiedItems] = useState([]);
 
   useEffect(() => {
-    cart.subscribe((value) => {
+    const subscription = cart.subscribe((value) => {
       const items = value?.cartItems ?? [];
       const simplifiedItems =
         value?.cartItems.map((item) => ({
@@ -18,6 +18,10 @@ export function useShoppingCart() {
       setItems(items);
       setSimplifiedItems(simplifiedItems);
     });
+
+    return () => {
+      subscription.unsubscribe();
+    };
   }, []);
 
   function getItemQuantity(id) {
