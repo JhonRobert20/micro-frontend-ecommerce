@@ -1,18 +1,9 @@
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
 const ModalFooter = () => {
-  const buttons = [
-    {
-      label: "Close",
-      className: "w-1/2 py-1.5 px-2 font-medium bg-red-500",
-    },
-    {
-      label: "Save",
-      className: "w-1/2 py-1.5 px-2 font-medium border-black border-2",
-    },
-  ];
+  const buttons = ["Close", "Save"];
   return (
-    <div className="w-full flex justify-between gap-2">
+    <div className="w-full flex justify-between gap-5">
       {buttons.map((button, idx) => (
         <motion.div
           key={button.label}
@@ -23,11 +14,13 @@ const ModalFooter = () => {
             delay: 0.2 + idx / 5,
           }}
           className={cn(
-            "focus:shadow-[0_0_0_2px] focus:outline-none",
-            button.className
+            "w-1/2 py-1.5 px-2 font-medium ",
+            idx === 1
+              ? "border-[#f7f3ed] border-2 "
+              : "bg-[#f7f3ed]  border-2 border-[#1C1C1C]"
           )}
         >
-          {button.label}
+          {button}
         </motion.div>
       ))}
     </div>

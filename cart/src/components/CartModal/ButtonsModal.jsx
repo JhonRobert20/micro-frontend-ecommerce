@@ -3,7 +3,7 @@ import { CircleX, ShoppingBag } from "lucide-react";
 export const ModalClose = () => {
   return (
     <div
-      className="absolute top-[10px] right-[10px]  rounded-full focus:shadow-[0_0_0_2px] focus:outline-none"
+      className="z-30 absolute top-[10px] right-[10px]  rounded-full focus:shadow-[0_0_0_2px] focus:outline-none"
       aria-label="Close"
     >
       <CircleX />

@@ -23,15 +23,15 @@ const Modal = ({
       >
         <Dialog.Overlay className="fixed inset-0 bg-black/25" />
       </motion.div>
-      <Dialog.Content asChild>
+      <Dialog.Content className="relative">
         <motion.div {...modalAnimation} className={contentClassName}>
           <section>
             <Dialog.Title asChild>{title}</Dialog.Title>
             <Dialog.Description asChild>{content}</Dialog.Description>
           </section>
           <Dialog.Close>{footerContent}</Dialog.Close>
-          <Dialog.Close>{modalClose}</Dialog.Close>
         </motion.div>
+        <Dialog.Close>{modalClose}</Dialog.Close>
       </Dialog.Content>
     </Dialog.Portal>
   </Dialog.Root>
