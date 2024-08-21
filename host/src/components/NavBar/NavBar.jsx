@@ -10,7 +10,7 @@ export default function NavBar() {
   //.env ADMIN_EMAIL=hello@admin.com
   // const isAdmin = user?.email = process.env.ADMIN_EMAIL
   return (
-    <nav className="sticky z-20 top-0 w-full border-b border-gray-200 bg-gray/75 backdrop-blur-lg transition-all h-16 shadow-sm">
+    <nav className="sticky z-20 top-0 w-full border-b border-gray-200 bg-gray/55 backdrop-blur-lg transition-all h-16 shadow-sm">
       <MaxWidthWrapper>
         <div className="h-16 flex items-center justify-between">
           <div className="flex items-center justify-center sm:items-stretch sm:justify-start gap-9">
