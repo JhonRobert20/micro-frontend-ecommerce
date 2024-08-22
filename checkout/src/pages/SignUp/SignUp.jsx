@@ -8,7 +8,7 @@ const Login = () => {
         <h1 className="tracking-widest	">Login</h1>
         <span>Enter your email and password to login:</span>
       </div>
-      <LoginForm />
+      <LoginForm signUp={true} />
     </div>
   );
 };

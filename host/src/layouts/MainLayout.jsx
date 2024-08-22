@@ -9,6 +9,8 @@ import NavBar from "../components/NavBar/NavBar";
 import UploadFile from "../pages/Admin/UploadFile";
 import Home from "../pages/Home/Home";
 import Login from "checkout/Login";
+import SignUp from "checkout/SignUp";
+
 export function MainLayout({ children }) {
   return (
     <Router>
@@ -18,6 +20,7 @@ export function MainLayout({ children }) {
         <Route path="/products/:id" Component={PDPContent} />
         <Route path="/cart" Component={CartContent} />
         <Route path="/login" Component={Login} />
+        <Route path="/register" Component={SignUp} />
       </Routes>
     </Router>
 
