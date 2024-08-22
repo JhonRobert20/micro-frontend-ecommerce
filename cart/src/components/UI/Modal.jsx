@@ -26,7 +26,7 @@ const Modal = ({
       </motion.div>
       <Dialog.Content className="relative">
         <motion.div {...modalAnimation} className={contentClassName}>
-          <section>
+          <section className="h-full">
             <Dialog.Title className="w-full flex justify-between items-center border-[1px] border-b-[#f7f3ed]">
               {title}
               <Dialog.Close>{modalClose}</Dialog.Close>

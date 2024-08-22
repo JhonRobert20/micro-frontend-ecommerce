@@ -1,3 +1,3 @@
 export const ModalTitle = () => {
-  return <h3 className="font-medium p-8">"Modal Title"</h3>;
+  return <p className="font-medium p-8">"Modal Title"</p>;
 };
