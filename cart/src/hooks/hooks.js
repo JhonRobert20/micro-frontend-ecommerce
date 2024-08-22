@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { cart } from "cart/cart";
 import { formatCurrency } from "catalog/formatCurrency";
 
@@ -17,58 +17,51 @@ export function useShoppingCart() {
     };
   }, []);
 
-  function getItemQuantity(id) {
-    return items.find((item) => item.id === id)?.quantity || 0;
-  }
-
-  function increaseCartQuantity(id) {
-    //we don't have an item
-    setItems((currItem) => {
-      if (currItem.find((item) => item.id === id) == null) {
-        return [...currItem, { id, quantity: 1 }];
-      } else {
-        return currItem.map((item) => {
-          if (item.id === id) {
-            return { ...item, quantity: item.quantity + 1 };
-          } else {
-            return item;
-          }
-        });
-      }
-    });
-  }
-
-  function decreaseCartQuantity(id) {
-    //we have just 1 quantity so remove it
-    setItems((currItem) => {
-      if (currItem.find((item) => item.id === id)?.quantity === 1) {
-        return currItem.filter((item) => item.id !== id);
-      } else {
-        return currItem.map((item) => {
-          if (item.id === id) {
-            return { ...item, quantity: item.quantity - 1 };
-          } else {
-            return item;
-          }
-        });
-      }
-    });
-  }
-
-  function removeQuantity(id) {
-    setItems((currItem) => {
-      return currItem.filter((item) => item.id !== id);
-    });
-  }
-
-  const cartQuantity = items.reduce(
-    (quantity, item) => item.quantity + quantity,
-    0
+  const getItemQuantity = useCallback(
+    (id) => items.find((item) => item.id === id)?.quantity || 0,
+    [items]
   );
 
-  const cartTotalPrice = formatCurrency(
-    items.reduce((a, v) => a + v.quantity * v.price, 0)
-  );
+  const increaseCartQuantity = useCallback((id) => {
+    setItems((currItems) => {
+      const existingItem = currItems.find((item) => item.id === id);
+      if (!existingItem) {
+        return [...currItems, { id, quantity: 1 }];
+      }
+
+      return currItems.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+    });
+  }, []);
+
+  const decreaseCartQuantity = useCallback((id) => {
+    setItems((currItems) => {
+      const existingItem = currItems.find((item) => item.id === id);
+      if (existingItem?.quantity === 1) {
+        return currItems.filter((item) => item.id !== id);
+      }
+
+      return currItems.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+      );
+    });
+  }, []);
+
+  const removeQuantity = useCallback((id) => {
+    setItems((currItems) => currItems.filter((item) => item.id !== id));
+  }, []);
+
+  // Calcular cantidades y precios totales, memoizados
+  const cartQuantity = useMemo(() => {
+    return items.reduce((quantity, item) => item.quantity + quantity, 0);
+  }, [items]);
+
+  const cartTotalPrice = useMemo(() => {
+    return formatCurrency(
+      items.reduce((total, item) => total + item.quantity * item.price, 0)
+    );
+  }, [items]);
 
   return {
     items,
