@@ -1,11 +1,11 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const path = require('path');
-const Dotenv = require('dotenv-webpack');
-
+const path = require("path");
+const Dotenv = require("dotenv-webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const deps = require("./package.json").dependencies;
 
-const printCompilationMessage = require('./compilation.config.js');
+const printCompilationMessage = require("./compilation.config.js");
 
 module.exports = (_, argv) => ({
   output: {
@@ -13,28 +13,28 @@ module.exports = (_, argv) => ({
   },
 
   resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+    extensions: [".tsx", ".ts", ".jsx", ".js", ".json", ".scss"],
   },
 
   devServer: {
     port: 8083,
     historyApiFallback: true,
-    watchFiles: [path.resolve(__dirname, 'src')],
+    watchFiles: [path.resolve(__dirname, "src")],
     onListening: function (devServer) {
-      const port = devServer.server.address().port
+      const port = devServer.server.address().port;
 
-      printCompilationMessage('compiling', port)
+      printCompilationMessage("compiling", port);
 
-      devServer.compiler.hooks.done.tap('OutputMessagePlugin', (stats) => {
+      devServer.compiler.hooks.done.tap("OutputMessagePlugin", (stats) => {
         setImmediate(() => {
           if (stats.hasErrors()) {
-            printCompilationMessage('failure', port)
+            printCompilationMessage("failure", port);
           } else {
-            printCompilationMessage('success', port)
+            printCompilationMessage("success", port);
           }
-        })
-      })
-    }
+        });
+      });
+    },
   },
 
   module: {
@@ -47,8 +47,13 @@ module.exports = (_, argv) => ({
         },
       },
       {
-        test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        test: /\.(css|s[ac]ss)$/i, // Procesa tanto CSS como SCSS
+        use: [
+          MiniCssExtractPlugin.loader, // Extrae CSS a un archivo separado
+          "css-loader", // Traduce CSS a módulos CommonJS
+          "postcss-loader", // Procesa CSS con PostCSS
+          "sass-loader", // Compila SCSS a CSS
+        ],
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,
@@ -65,7 +70,10 @@ module.exports = (_, argv) => ({
       name: "checkout",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./Login": "./src/pages/Login/Login.jsx",
+        "./SignUp": "./src/pages/SignUp/SignUp.jsx",
+      },
       shared: {
         ...deps,
         react: {
@@ -81,6 +89,9 @@ module.exports = (_, argv) => ({
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
-    new Dotenv()
+    new Dotenv(),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css",
+    }),
   ],
 });
