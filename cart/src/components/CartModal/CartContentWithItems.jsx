@@ -42,7 +42,7 @@ const CartContentWithItems = ({
   );
 };
 
-const QuantityControl = ({ quantity, onIncrease, onDecrease }) => (
+export const QuantityControl = ({ quantity, onIncrease, onDecrease }) => (
   <div className="flex items-center border border-[#1c1c1c33] rounded-sm">
     <ControlButton
       onClick={onDecrease}
@@ -60,27 +60,39 @@ const QuantityControl = ({ quantity, onIncrease, onDecrease }) => (
   </div>
 );
 
-const ControlButton = ({ onClick, children, className = "" }) => (
+const ControlButton = ({
+  onClick,
+  children,
+  className = "",
+  disabled = false,
+}) => (
   <button
     onClick={onClick}
-    className={`cursor-pointer hover:opacity-100 bg-[#1c1c1c19] flex items-center px-1.5 py-1 ${className} border-[#1c1c1c]`}
+    className={`cursor-pointer hover:opacity-100 bg-[#1c1c1c19] flex items-center px-1.5 py-1 ${className} border-[#1c1c1c] ${
+      disabled ? "opacity-50 cursor-not-allowed" : ""
+    }`}
+    disabled={disabled}
   >
     {children}
   </button>
 );
 
-const ActionButtons = ({ onAddToFavorites, onRemove }) => (
-  <div className="flex gap-5">
+export const ActionButtons = ({
+  onAddToFavorites,
+  onRemove,
+  showLabel = true,
+}) => (
+  <div className={cn("flex", showLabel ? "gap-5" : "gap-1")}>
     <ActionButton
       onClick={onAddToFavorites}
       icon={<Heart className="w-4 aspect-square" />}
-      label="Add To Favorites"
+      label={showLabel ? "Add To Favorites" : undefined}
     />
     <ActionButton
       onClick={onRemove}
       icon={<Trash2 className="w-4 aspect-square" />}
-      label="Remove"
-      className={"text-red-500 hover:text-[#f7f3ed] "}
+      label={showLabel ? "Remove" : undefined}
+      className={"text-red-500 hover:text-[#f7f3ed]"}
     />
   </div>
 );
