@@ -2,10 +2,13 @@ import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
 
 const FooterWithItems = ({ cartTotalPrice }) => {
-  const buttons = ["Seguir comprando", "Pagar"];
+  const buttons = ["Seguir comprando", "Pasar por caja"];
   return (
     <div className="bg-[#f7f3ed] w-full  flex flex-col items-start gap-4 pt-8 border-t-[#D1D9D6] border-[1px]">
       <div className="gap-0.5 px-8 flex flex-col items-start justify-start">
+        <p className="text-blue-500 hover:underline">
+          ¿Tienes un código promocional?
+        </p>
         <p className="font-semibold">
           Total <span className="text-xs font-normal">IVA incluido</span>
         </p>

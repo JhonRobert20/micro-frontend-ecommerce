@@ -1,9 +1,7 @@
-import { ITEMS } from "../../lib/constants";
 import { motion } from "framer-motion";
+import { Minus, Plus, Heart, Trash2 } from "lucide-react";
 import { textAnimation } from "./animations";
-import { Trash2, Minus, Plus } from "lucide-react";
-import { useShoppingCart } from "../../hooks/hooks";
-
+import { cn } from "../../lib/utils";
 const CartContentWithItems = ({
   items,
   increaseCartQuantity,
@@ -15,41 +13,88 @@ const CartContentWithItems = ({
       {items.map((item, idx) => (
         <motion.article
           key={item.id}
-          className="flex gap-6 items-center"
+          className="flex gap-6 items-center  border-[#1c1c1c28] border-b-[1px] w-full pb-3"
           {...textAnimation(idx)}
         >
           <img
             src={item.image}
-            className="w-28 aspect-square flex-shrink-0 h-auto "
             alt={item.name}
+            className="w-28 aspect-square h-auto flex-shrink-0 rounded-sm"
           />
-          <div className="flex flex-col items-start gap-2">
-            <div className="flex flex-col items-start gap-1">
-              <span>{item.name}</span>
-              <span className="opacity-40 text-sm">{item.price}</span>
-            </div>
+          <div className="flex flex-col gap-2">
+            <span className="font-semibold">{item.name}</span>
             <div className="flex gap-4 items-center">
-              <div className="flex items-center  border-[1px] border-[#1c1c1c44] rounded-sm">
-                <Minus
-                  onClick={() => decreaseCartQuantity(item.id)}
-                  className="cursor-pointer aspect-square w-4 mx-2 my-1.5 opacity-20 hover:opacity-100"
-                />
-                <span className="text-base opacity-20">{item.quantity}</span>
-                <Plus
-                  onClick={() => increaseCartQuantity(item.id)}
-                  className="cursor-pointer aspect-square w-4 mx-2 my-1.5 opacity-20 hover:opacity-100"
-                />
-              </div>
-              <Trash2
-                onClick={() => removeQuantity(item.id)}
-                className="hover:text-[#f7f3ed] aspect-square w-5 cursor-pointer"
+              <QuantityControl
+                quantity={item.quantity}
+                onIncrease={() => increaseCartQuantity(item.id)}
+                onDecrease={() => decreaseCartQuantity(item.id)}
               />
+              <span className="text-base font-semibold">{item.price}€</span>
             </div>
+            <ActionButtons
+              onAddToFavorites={() => removeQuantity(item.id)}
+              onRemove={() => removeQuantity(item.id)}
+            />
           </div>
         </motion.article>
       ))}
     </>
   );
 };
+
+const QuantityControl = ({ quantity, onIncrease, onDecrease }) => (
+  <div className="flex items-center border border-[#1c1c1c33] rounded-sm">
+    <ControlButton
+      onClick={onDecrease}
+      className="rounded-l-sm border-r-[#1c1c1c33] hover:opacity-80"
+    >
+      <Minus className="w-4 aspect-square" />
+    </ControlButton>
+    <span className="text-base px-3">{quantity}</span>
+    <ControlButton
+      onClick={onIncrease}
+      className="rounded-r-sm border-l-[#1c1c1c33] hover:opacity-80"
+    >
+      <Plus className="w-4 aspect-square" />
+    </ControlButton>
+  </div>
+);
+
+const ControlButton = ({ onClick, children, className = "" }) => (
+  <button
+    onClick={onClick}
+    className={`cursor-pointer hover:opacity-100 bg-[#1c1c1c19] flex items-center px-1.5 py-1 ${className} border-[#1c1c1c]`}
+  >
+    {children}
+  </button>
+);
+
+const ActionButtons = ({ onAddToFavorites, onRemove }) => (
+  <div className="flex gap-5">
+    <ActionButton
+      onClick={onAddToFavorites}
+      icon={<Heart className="w-4 aspect-square" />}
+      label="Add To Favorites"
+    />
+    <ActionButton
+      onClick={onRemove}
+      icon={<Trash2 className="w-4 aspect-square" />}
+      label="Remove"
+      className={"text-red-500 hover:text-[#f7f3ed] "}
+    />
+  </div>
+);
+
+const ActionButton = ({ onClick, icon, label, className }) => (
+  <div className={cn("hover:text-[#f7f3ed]  cursor-pointer", className)}>
+    <button
+      onClick={onClick}
+      className={cn("flex items-center gap-1", className)}
+    >
+      {icon}
+      <span className="text-xs">{label}</span>
+    </button>
+  </div>
+);
 
 export default CartContentWithItems;
