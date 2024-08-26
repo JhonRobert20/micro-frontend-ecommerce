@@ -13,10 +13,6 @@ export default function CartContent() {
   return (
     <section className="py-8   md:py-16">
       <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
-        <h2 className="text-xl font-semibold text-[#1c1c1c] sm:text-2xl mb-6">
-          Shopping Cart
-        </h2>
-
         <div className="lg:flex lg:items-start">
           <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-3xl border-r-[#1c1c1c39] pr-14 lg:border-r-[1px]">
             <PaymentForm />
@@ -104,6 +100,9 @@ const SummaryRow = ({ label, value, isBold = false, className = "" }) => (
 const PaymentForm = () => {
   return (
     <form className="w-full">
+      <h2 className="text-xl font-semibold  sm:text-2xl">Contact</h2>
+      <ContactSection />
+      <h2 className="text-xl font-semibold  sm:text-2xl">Delivery</h2>
       <AddressSection />
       <h2 className="text-xl font-semibold  sm:text-2xl">Payment</h2>
       <PaymentsCards />
@@ -118,6 +117,13 @@ const PaymentForm = () => {
     </form>
   );
 };
+
+const ContactSection = () => (
+  <div className="grid gap-4 mt-4 mb-8">
+    <Input placeholder="Email" />
+    <Checkbox label="Subscribe me to brand's offers and updates" />
+  </div>
+);
 
 const AddressSection = () => (
   <div className="grid gap-4 mt-4 mb-8">
@@ -134,7 +140,6 @@ const AddressSection = () => (
       <Input placeholder="Province" />
     </div>
     <Input placeholder="Phone" />
-    <Checkbox label="Subscribe me to brand's offers and updates" />
   </div>
 );
 
