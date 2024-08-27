@@ -71,10 +71,10 @@ module.exports = (_, argv) => ({
         host: "host@http://localhost:8080/remoteEntry.js",
       },
       exposes: {
-        "./cart": "./src/cart.js",
+        "./useLoggedIn": "./src/hooks/useLoggedIn.js",
         "./Login": "./src/components/Login.jsx",
-        "./Cart": "./src/components/CartModal/index.jsx",
-        "./CartContent": "./src/pages/CartContent.jsx",
+        "./CartModal": "./src/components/CartModal/index.jsx",
+        "./Cart": "./src/pages/PaymentPage.jsx",
       },
       shared: {
         ...deps,

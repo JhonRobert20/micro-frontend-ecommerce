@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
-import { cart } from "cart/cart";
+import { cart } from "cart/useLoggedIn";
 import { formatCurrency } from "catalog/formatCurrency";
 
 //usar quizás prevItems

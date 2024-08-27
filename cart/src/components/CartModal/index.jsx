@@ -1,8 +1,8 @@
 import React from "react";
 
 import Modal from "../../components/UI/Modal";
-import { modalAnimation } from "./animations";
-import CartContent from "./CartContent";
+import { modalAnimation } from "./Animation";
+import CartContent from "./Content/index";
 import { ModalClose, ModalOpen } from "./ButtonsModal";
 import { ModalTitle } from "./TitleModal";
 import ModalFooter from "./Footer";

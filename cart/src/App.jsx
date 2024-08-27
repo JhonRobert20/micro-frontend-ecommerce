@@ -4,11 +4,11 @@ import ReactDOM from "react-dom/client";
 import "remixicon/fonts/remixicon.css";
 import "./index.scss";
 
-import CartContent from "./pages/CartContent";
+import PaymentPage from "./pages/PaymentPage";
 
 const App = () => (
   <div className="mt-10 text-3xl mx-auto max-w-6xl">
-    <CartContent />
+    <PaymentPage />
   </div>
 );
 const rootElement = document.getElementById("app");

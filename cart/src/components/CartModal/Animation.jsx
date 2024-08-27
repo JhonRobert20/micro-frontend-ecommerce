@@ -14,3 +14,12 @@ export const textAnimation = (delay) => ({
     delay: 0.15 + delay / 10,
   },
 });
+
+export const buttonAnimation = (delay, idx) => ({
+  initial: { scale: 0 },
+  animate: { scale: 1 },
+  transition: {
+    type: "spring",
+    delay: 0.2 + idx / 5,
+  },
+});

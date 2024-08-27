@@ -6,6 +6,8 @@ import { CustomerReviewSection } from "../../components/UserReviews/CustomerRevi
 import { ArrowRight, Check } from "lucide-react";
 import Phone from "../../components/HeroSection/Phone";
 import Link from "react-router-dom";
+
+import Footer from "../../components/Footer";
 function Home() {
   return (
     <>
@@ -84,6 +86,7 @@ function Home() {
           </ul>
         </MaxWidthWrapper>
       </section>
+      <Footer />
     </>
   );
 }

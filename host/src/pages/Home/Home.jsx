@@ -7,6 +7,7 @@ import { CustomerReviewSection } from "../../components/UserReviews/CustomerRevi
 import HeaderSection from "../../components/HeaderSection";
 
 import { PRODUCTS_FOR_SALE, ITEMS } from "../../lib/constants";
+import Footer from "../../components/Footer";
 
 function Home() {
   return (
@@ -93,9 +94,12 @@ function Home() {
       </section>
 
       {/* --------- VALUE PROPOSITION SECTION ----------*/}
-      <section>
+      <section className="mb-11">
         <CustomerReviewSection />
       </section>
+      <MaxWidthWrapper className=" border-t-[1px] border-t-[#1c1c1c3c] bg-[#e7e0d5]">
+        <Footer />
+      </MaxWidthWrapper>
     </>
   );
 }

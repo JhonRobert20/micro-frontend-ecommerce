@@ -3,7 +3,7 @@ import { cn } from "../../lib/utils/utils";
 import screenShot from "../../assets/Screenshot.png";
 import winebottle3 from "../../assets/winebottle3.jpg";
 import ActionCardBtns from "../UI/ActionCardBtns.jsx";
-import { addToCart, useLoggedIn } from "cart/cart";
+import { addToCart, useLoggedIn } from "cart/useLoggedIn";
 
 export const BlurImage = ({ src, hoverSrc, className, alt, ...rest }) => {
   const [isLoading, setLoading] = useState(true);

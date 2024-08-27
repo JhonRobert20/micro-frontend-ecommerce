@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Minus, Plus, Heart, Trash2 } from "lucide-react";
-import { textAnimation } from "./animations";
-import { cn } from "../../lib/utils";
+import { textAnimation } from "../Animation";
+import { cn } from "../../../lib/utils";
 const CartContentWithItems = ({
   items,
   increaseCartQuantity,

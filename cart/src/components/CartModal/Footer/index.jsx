@@ -1,4 +1,4 @@
-import { useShoppingCart } from "../../hooks/hooks";
+import { useShoppingCart } from "../../../hooks/useShoppingCart";
 import FooterWithItems from "./FooterWithItems";
 
 const ModalFooter = () => {

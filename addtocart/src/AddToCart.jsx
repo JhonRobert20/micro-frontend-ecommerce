@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { jwt, addToCart } from "cart/cart";
+import { jwt, addToCart } from "cart/useLoggedIn";
 
 const AddToCartButton = ({ id }) => {
   const [loggedIn, setLoggedIn] = useState(false);

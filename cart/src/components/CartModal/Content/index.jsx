@@ -1,5 +1,5 @@
-import { cn } from "../../lib/utils";
-import { useShoppingCart } from "../../hooks/hooks";
+import { cn } from "../../../lib/utils";
+import { useShoppingCart } from "../../../hooks/useShoppingCart";
 import CartContentEmpty from "./CartContentEmpty";
 import CartContentWithItems from "./CartContentWithItems";
 

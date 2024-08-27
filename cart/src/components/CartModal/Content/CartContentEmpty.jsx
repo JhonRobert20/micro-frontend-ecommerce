@@ -1,5 +1,5 @@
 import React from "react";
-import { CartButton } from "./ButtonsModal";
+import { CartButton } from "../../UI/Buttons";
 
 const CartContentEmpty = () => {
   return (
