@@ -5,7 +5,7 @@ import "remixicon/fonts/remixicon.css";
 import PDPContent from "pdp/ProductContent";
 import HomeContent from "catalog/HomeContent";
 import Cart from "cart/Cart";
-import NavBar from "../components/NavBar/NavBar";
+import NavBar from "../components/NavBar";
 import UploadFile from "../pages/Admin/UploadFile";
 import Home from "../pages/Home/Home";
 import Login from "checkout/Login";
