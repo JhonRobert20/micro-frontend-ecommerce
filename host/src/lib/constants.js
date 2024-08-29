@@ -14,9 +14,21 @@ export const NAV_BAR = [
 ];
 
 export const PRODUCTS_FOR_SALE = [
-  { title: "Embutidos", src: "" },
-  { title: "Quesos", src: "" },
-  { title: "Vinos", src: "" },
+  {
+    title: "Embutidos",
+    src: "../../src/assets/ecommerceWIne.png",
+    hoverSrc: "./../src/assets/copaMasVIno.jpeg",
+  },
+  {
+    title: "Quesos",
+    src: "../../src/assets/ecommerceWIne.png",
+    hoverSrc: "./../assets/copaMasVIno.jpeg",
+  },
+  {
+    title: "Vinos",
+    src: "../../src/assets/ecommerceWIne.png",
+    hoverSrc: "./../assets/copaMasVIno.jpeg",
+  },
 ];
 export const ICONS_NAVBAR = [
   { Icon: Search, src: "" },
