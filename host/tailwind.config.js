@@ -38,6 +38,7 @@ module.exports = {
       borderColor: {
         skin: {
           details: "var(--color-details)",
+          decorative: "var(--color-decorative-section)",
         },
       },
     },
