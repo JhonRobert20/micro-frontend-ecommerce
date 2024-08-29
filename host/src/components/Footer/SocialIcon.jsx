@@ -6,7 +6,7 @@ const SocialIcon = ({ Icon, link }) => (
     className="w-9 h-9 rounded-sm bg-skin-details flex justify-center items-center hover:bg-skin-decorative text-skin-base hover:text-skin-base-hover transition-colors duration-200"
     aria-label={Icon.displayName || "social-icon"}
   >
-    <Icon aria-hidden={link} />
+    <Icon strokeWidth={1.3} aria-hidden={link} />
   </a>
 );
 

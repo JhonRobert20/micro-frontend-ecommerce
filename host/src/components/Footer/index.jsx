@@ -6,7 +6,7 @@ import FooterLinks from "./FooterLinks";
 
 const Footer = () => (
   <footer className="w-full border-t-[1px] border-skin-details">
-    <MaxWidthWrapper className={"pt-16 lg:px-12"}>
+    <MaxWidthWrapper className={"pt-16"}>
       <div className="flex justify-between flex-col lg:flex-row">
         <NewsLetter />
         <FooterLinks />
