@@ -1,3 +1,5 @@
+import { Instagram, Facebook, Linkedin } from "lucide-react";
+
 export const NAV_BAR = [
   { name: "cart", link: "cart" },
   { name: "Products", link: "products" },
@@ -47,4 +49,22 @@ export const ITEMS = [
     title: "Hiring for a Staff Software Engineer",
     src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
+];
+
+export const SECTION_FOOTER = [
+  { title: "Company", links: ["Home", "About"] },
+  {
+    title: "Customer Service",
+    links: ["Contact", "FAQs", "Returns", "Shipping"],
+  },
+  {
+    title: "Terms and Privacy",
+    links: ["Privacy Policy", "Terms of Service", "Legal Notice"],
+  },
+];
+
+export const SOCIAL_LINKS = [
+  { Icon: Facebook, link: "javascript:;" },
+  { Icon: Linkedin, link: "javascript:;" },
+  { Icon: Instagram, link: "javascript:;" },
 ];
