@@ -10,6 +10,7 @@ import UploadFile from "../pages/Admin/UploadFile";
 import Home from "../pages/Home/Home";
 import Login from "checkout/Login";
 import SignUp from "checkout/SignUp";
+import Footer from "../components/Footer";
 
 export function MainLayout({ children }) {
   return (
@@ -22,6 +23,7 @@ export function MainLayout({ children }) {
         <Route path="/login" Component={Login} />
         <Route path="/register" Component={SignUp} />
       </Routes>
+      <Footer />
     </Router>
 
     // <main className="flex flex-col min-h-[calc(100vh-3.5rem-1px)]">

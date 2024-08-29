@@ -97,9 +97,6 @@ function Home() {
       <section className="mb-11">
         <CustomerReviewSection />
       </section>
-      <MaxWidthWrapper className=" border-t-[1px] border-t-[#1c1c1c3c] bg-[#e7e0d5]">
-        <Footer />
-      </MaxWidthWrapper>
     </>
   );
 }
