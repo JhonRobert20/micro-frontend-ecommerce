@@ -10,11 +10,14 @@ export default function NavBar() {
   //.env ADMIN_EMAIL=hello@admin.com
   // const isAdmin = user?.email = process.env.ADMIN_EMAIL
   return (
-    <nav className="sticky z-20 top-0 w-full border-b border-skin-details bg-skin-fill">
+    <nav className="sticky z-50 top-0 w-full border-b border-skin-details bg-skin-fill">
       <MaxWidthWrapper>
         <div className="h-16 w-full flex items-center justify-between">
-          <Logo />
-          <NavigationLinks />
+          <div className="flex gap-10">
+            <Logo />
+            <NavigationLinks />
+          </div>
+
           <IconButtons />
         </div>
       </MaxWidthWrapper>

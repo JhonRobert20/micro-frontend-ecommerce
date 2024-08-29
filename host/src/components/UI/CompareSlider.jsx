@@ -96,7 +96,7 @@ export const CompareSlider = ({
       <AnimatePresence initial={false}>
         {/* ------------------------------Slider-------------------------------------- */}
         <motion.div
-          className="h-full w-px absolute top-0 m-auto z-30 "
+          className="h-full w-px absolute top-0 m-auto z-10 "
           style={{
             left: `${sliderXPercent}%`,
             top: "0",
@@ -104,11 +104,11 @@ export const CompareSlider = ({
           }}
           transition={{ duration: 0 }}
         >
-          <div className="w-0.5 h-full absolute top-1/2 -translate-y-1/2 left-0  z-20 bg-[#f7f3ed]" />
-          <div className="w-10 h-1/2 [mask-image:radial-gradient(50px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 z-10 opacity-100 " />
-          <div className=" rounded-full ring-2 ring-slate-100 top-1/2 -translate-y-1/2 bg-[#f7f3ed] z-30 left-1/2 -translate-x-1/2 absolute flex items-center justify-center h-20 w-20 hover:scale-105">
-            <ChevronLeft className="text-[#1C1C1C] w-4 h-4 absolute top-1/2 -translate-y-1/2 right-[70%] -translate-x-1/2 " />
-            <ChevronRight className="text-[#1C1C1C] w-4 h-4 absolute top-1/2 -translate-y-1/2 right-[-10%] -translate-x-1/2 " />
+          <div className="w-[1px] h-full absolute top-1/2 -translate-y-1/2 left-0 bg-skin-details" />
+          <div className="w-10 h-1/2 [mask-image:radial-gradient(50px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 opacity-100 " />
+          <div className="rounded-full border-skin-decorative border-[1px] top-1/2 -translate-y-1/2 bg-skin-details  left-1/2 -translate-x-1/2 absolute flex items-center justify-center h-20 w-20 hover:scale-105">
+            <ChevronLeft className="text-skin-decorative w-4 h-4 absolute top-1/2 -translate-y-1/2 right-[70%] -translate-x-1/2 " />
+            <ChevronRight className="text-skin-decorative w-4 h-4 absolute top-1/2 -translate-y-1/2 right-[-10%] -translate-x-1/2 " />
             <div className="hover:scale-110 transition-transform duration-500 flex items-center justify-center rounded-full h-20 w-20">
               <img
                 className="h-14 w-14 overflow-hidden rounded-full outline-none "
@@ -121,12 +121,12 @@ export const CompareSlider = ({
 
         {/* ------------------------------FIRST IMAGE-------------------------------------- */}
       </AnimatePresence>
-      <div className="overflow-hidden w-full h-full relative z-[19] pointer-events-none">
+      <div className="w-full h-full relative ">
         <AnimatePresence initial={false}>
           {firstImage ? (
             <motion.div
               className={cn(
-                "absolute inset-0 z-[19] rounded-2xl flex-shrink-0 w-full h-full select-none overflow-hidden",
+                "z-10  absolute inset-0 rounded-2xl flex-shrink-0 w-full h-full select-none overflow-hidden",
                 firstImageClassName
               )}
               // Partially cropped --> clipPath, only the left part is visible, according to sliderXPercent
@@ -139,14 +139,26 @@ export const CompareSlider = ({
                 alt="first image"
                 src={firstImage}
                 className={cn(
-                  "absolute inset-0  z-[10] flex-shrink-0 w-full h-full select-none",
+                  "absolute inset-0 flex-shrink-0 w-full h-full select-none",
                   firstImageClassName
                 )}
                 draggable={false}
               />
-              <button className="z-50 bg-[#f7f3ed] w-5 h-5 absolute top-0 right-0">
-                Click
-              </button>
+              <div className="absolute top-[3rem] right-[7rem]">
+                <p className=" tracking-widest text-3xl cursor-auto text-end leading-[3rem]">
+                  Elige el <strong>vino </strong>y <strong>embutido</strong>{" "}
+                  <br />
+                  perfecto para tu celebración
+                </p>
+              </div>
+              <div className="absolute bottom-[5rem] left-[5rem]">
+                <p className=" tracking-widest text-2xl cursor-auto">
+                  ¡Compra y festeja!
+                </p>
+                <button className="py-4 px-8 mt-7 border-[1px] border-skin-decorative hover:border-skin-details rounded-sm z-10 bg-skin-details hover:bg-skin-decorative text-skin-base hover:text-skin-base-hover cursor-pointer tracking-widest	">
+                  Comprar Ahora
+                </button>
+              </div>
             </motion.div>
           ) : null}
         </AnimatePresence>
@@ -158,7 +170,7 @@ export const CompareSlider = ({
         {secondImage ? (
           <motion.img
             className={cn(
-              "absolute top-0 left-0 z-[18] w-full h-full select-none",
+              "absolute top-0 left-0 w-full h-full select-none",
               secondImageClassname
             )}
             alt="second image"
@@ -166,6 +178,21 @@ export const CompareSlider = ({
             draggable={false}
           />
         ) : null}
+        <div className="absolute top-[3rem] right-[7rem] text-end">
+          <p className=" tracking-widest text-3xl cursor-auto leading-[3rem]">
+            Que no se acabe la fiesta: repón
+            <br />
+            tu <strong>vino </strong>y <strong>embutidos</strong> favoritos
+          </p>
+        </div>
+        <div className="absolute bottom-[5rem] left-[5rem]">
+          <p className=" tracking-widest text-2xl cursor-auto">
+            ¡Compra y festeja!
+          </p>
+          <button className="py-4 px-8 mt-7 border-[1px] border-skin-decorative hover:border-skin-details rounded-sm z-10 bg-skin-details hover:bg-skin-decorative text-skin-base hover:text-skin-base-hover cursor-pointer tracking-widest	">
+            Comprar Ahora
+          </button>
+        </div>
       </AnimatePresence>
     </div>
   );
