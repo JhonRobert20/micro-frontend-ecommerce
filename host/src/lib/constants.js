@@ -1,15 +1,27 @@
-import { Instagram, Facebook, Linkedin } from "lucide-react";
+import {
+  Instagram,
+  Facebook,
+  Linkedin,
+  Search,
+  ShoppingCart,
+  UserRound,
+} from "lucide-react";
 
 export const NAV_BAR = [
-  { name: "cart", link: "cart" },
+  { name: "Home", link: "/" },
   { name: "Products", link: "products" },
-  { name: "home", link: "/" },
+  { name: "Cart", link: "cart" },
 ];
 
 export const PRODUCTS_FOR_SALE = [
   { title: "Embutidos", src: "" },
   { title: "Quesos", src: "" },
   { title: "Vinos", src: "" },
+];
+export const ICONS_NAVBAR = [
+  { Icon: Search, src: "" },
+  { Icon: ShoppingCart, src: "" },
+  { Icon: UserRound, src: "" },
 ];
 
 export const ITEMS = [
