@@ -26,7 +26,7 @@ function Home() {
       <section className="relative">
         <MaxWidthWrapper className="py-24  max-w-screen-2xl">
           <HeaderSection
-            className={"pb-12"}
+            className={"pb-14"}
             titleHeader={"Nuestros "}
             strongTitle={"Productos"}
             subtitleHeader={"descubre"}
@@ -46,32 +46,32 @@ function Home() {
       </section>
 
       {/* ----- PRODUCTS DEFINITION SECTION ------------------- */}
-      <section className="relative">
+      {/* <section className="relative">
         <MaxWidthWrapper className="py-24">
           <h2 className="text-2xl">Nuestros productos</h2>
 
           <CarouselCards data={ITEMS} />
         </MaxWidthWrapper>
-      </section>
+      </section> */}
 
       {/* ----- PRODUCTS DEFINITION SECTION ------------------- */}
-      <section className="relative">
+      {/* <section className="relative">
         <MaxWidthWrapper className="py-24">
           <h2 className="text-2xl">Nuestros productos</h2>
 
           <CarouselCards data={ITEMS} />
         </MaxWidthWrapper>
-      </section>
+      </section> */}
 
       {/* ----- PRODUCTS DEFINITION SECTION ------------------- */}
 
-      <section className="relative">
+      {/* <section className="relative">
         <MaxWidthWrapper className="">
           <h2 className="text-2xl">Nuestros productos</h2>
 
           <CarouselCards data={ITEMS} />
         </MaxWidthWrapper>
-      </section>
+      </section> */}
 
       <section>
         <CompareSlider
