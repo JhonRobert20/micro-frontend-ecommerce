@@ -4,5 +4,25 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f7f3ed;
+  color: var(--color-text-base);
+  background-color: var(--color-primary);
 }
+
+@layer base {
+  :root {
+    --color-text-base: #422600; //Texto, encabezados, o elementos que necesiten un fuerte contraste.
+    --color-text-base-hover: #ffffff;
+    --color-primary: #ded1b1; //Fondo principal. No distraer la atención del contenido principal.
+    --color-button-acent: #ba8700; //Elementos de llamada a la acción (botones, enlaces, ofertas especiales)
+    --color-button-acent-hover: #422600;
+    --color-details: #95a145; //Detalles, íconos, fondos de tarjetas
+    --color-decorative-section: #213816; //Fondos de secciones, elementos decorativos
+  }
+}
+
+// En resumen:
+// Fondo general: #DED1B1
+// Texto/Títulos: #422600
+// Botones/CTAs: #BA8700
+// Fondos de secciones destacadas: #213816
+// Detalles y complementos: #95A145
