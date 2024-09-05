@@ -64,8 +64,12 @@ module.exports = (_, argv) => ({
         },
       },
       {
-        test: /\.(png|svg|jpg|jpeg)$/,
+        test: /\.(png|svg|jpg|jpeg|webp)$/,
         use: ["file-loader"],
+      },
+      {
+        test: /\.mp4$/,
+        use: "file-loader?name=videos/[name].[ext]",
       },
     ],
   },
@@ -81,7 +85,8 @@ module.exports = (_, argv) => ({
         pdp: "product_detail_page@http://localhost:8084/remoteEntry.js",
       },
       exposes: {
-        "./MaxWidthWrapper": "./src/components/UI/MaxWidthWrapper.jsx",
+        "./MaxWidthWrapper": "./src/components/UI/MaxWidthWrapper/index.jsx",
+        "./LinkIcon": "./src/components/UI/LinkIcon/index.jsx",
       },
       shared: {
         ...deps,

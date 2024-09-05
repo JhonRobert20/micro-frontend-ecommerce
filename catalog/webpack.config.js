@@ -80,9 +80,13 @@ module.exports = (_, argv) => ({
       },
       exposes: {
         "./products": "./src/data/products.js",
-        "./HomeContent": "./src/pages/HomeContent.jsx",
         "./formatCurrency": "./src/lib/utils/formatCurrency.js",
-        "./carouselCards": "./src/components/CarouselCards/index.jsx",
+        "./productsCardsInfo": "./src/components/ProductsCardsInfo/index.jsx",
+        "./CompareImages": "./src/components/UI/CompareImages/index.jsx",
+        "./VideoPlayer": "./src/components/UI/Video/index.jsx",
+        "./ThreeDCardDemo": "./src/components/UI/3dCard/index.jsx",
+        "./ActionCardBtns": "./src/components/UI/ActionButtons/index.jsx",
+        "./ProductBanner": "./src/components/ProductBanner/index.jsx",
       },
       shared: {
         ...deps,
