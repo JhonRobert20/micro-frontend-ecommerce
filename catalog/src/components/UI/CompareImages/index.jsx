@@ -50,10 +50,9 @@ const CompareImages = ({
         <SliderHandle
           sliderXPercent={sliderXPercent}
           imgSlider={slider_hero_section}
-          handleBorderColor={"border-skin-decorative"}
-          handleBackgroundColor={"bg-skin-details"}
-          iconColor={"text-skin-decorative"}
-          lineColor={"bg-skin-decorative"}
+          handleBackgroundColor={"bg-skin-button-acent"}
+          iconColor={"text-skin-base"}
+          lineColor={"bg-skin-button-acent-hover"}
           transitionDuration={0}
         />
       </AnimatePresence>

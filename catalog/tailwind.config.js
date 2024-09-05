@@ -24,6 +24,7 @@ module.exports = {
         skin: {
           details: "var(--color-details)",
           decorative: "var(--color-decorative-section)",
+          "acent-hover": "var(--color-button-acent-hover)",
         },
       },
     },

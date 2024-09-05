@@ -5,8 +5,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const SliderHandle = ({
   sliderXPercent,
   imgSlider,
-  handleBorderColor = "border-skin-decorative",
-  handleBackgroundColor = "bg-skin-details",
+  handleBorderColor = "border-skin-acent-hover",
+  handleBackgroundColor = "bg-skin-button-acent",
   iconColor = "text-skin-decorative",
   lineColor = "bg-skin-decorative",
   transitionDuration = 0,
@@ -30,7 +30,7 @@ const SliderHandle = ({
 
       {/* Handle with Icons */}
       <div
-        className={`rounded-full border-[1px] top-1/2 -translate-y-1/2 ${handleBackgroundColor} ${handleBorderColor} left-1/2 -translate-x-1/2 absolute flex items-center justify-center `}
+        className={`rounded-full border-[1px] top-1/2 -translate-y-1/2 ${handleBackgroundColor} ${handleBorderColor} left-1/2 -translate-x-1/2 absolute flex items-center justify-center`}
       >
         <ChevronLeft
           className={`${iconColor} w-4 h-4 absolute top-1/2 -translate-y-1/2 right-[70%] -translate-x-1/2`}
