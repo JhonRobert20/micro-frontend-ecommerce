@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { MoveLeft, MoveRight } from "lucide-react";
 import { cn } from "../../lib/utils/utils";
-import Card from "../Card";
+import Card from "../ProductCard";
 
 const CarouselCards = ({ data, initialScroll = 90 }) => {
   const items = data?.map((card, index) => (
@@ -11,7 +11,6 @@ const CarouselCards = ({ data, initialScroll = 90 }) => {
   const carouselRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     if (carouselRef.current) {

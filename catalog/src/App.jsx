@@ -8,14 +8,11 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 
-import HomeContent from "./pages/HomeContent";
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <div className="mt-10 text-3xl mx-auto max-w-6xl">
-      <HomeContent />
-    </div>
+    <div className="mt-10 text-3xl mx-auto max-w-6xl"></div>
   </QueryClientProvider>
 );
 const rootElement = document.getElementById("app");

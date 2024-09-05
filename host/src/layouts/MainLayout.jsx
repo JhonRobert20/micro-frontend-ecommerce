@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "remixicon/fonts/remixicon.css";
 
 import PDPContent from "pdp/ProductContent";
-import HomeContent from "catalog/HomeContent";
 import Cart from "cart/Cart";
 import NavBar from "../components/NavBar";
 import UploadFile from "../pages/Admin/UploadFile";

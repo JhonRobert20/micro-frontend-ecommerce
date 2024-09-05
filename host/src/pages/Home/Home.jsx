@@ -1,27 +1,26 @@
 import MaxWidthWrapper from "../../components/UI/MaxWidthWrapper";
-import { CompareSlider } from "../../components/UI/CompareSlider";
-import hero_sin_vino from "../../assets/winescreanshot.jpg";
-import hero_sin_vino_ from "../../assets/ScreenshotEmpty.jpeg";
-import CarouselCards from "catalog/carouselCards";
-import { CustomerReviewSection } from "../../components/UserReviews/CustomerReviewSection";
-import HeaderSection from "../../components/HeaderSection";
-
+import CompareImages from "catalog/CompareImages";
+import hero_sin_vino from "../../../public/assets/winescreanshot.jpg";
+import hero_sin_vino_ from "../../../public/assets/ScreenshotEmpty.jpeg";
+import ProductsCardsInfo from "catalog/productsCardsInfo";
 import { PRODUCTS_FOR_SALE, ITEMS } from "../../lib/constants";
-import Footer from "../../components/Footer";
+import ProductBanner from "catalog/ProductBanner";
+import HeaderSection from "../../components/UI/HeaderSection";
 
 function Home() {
   return (
     <>
       {/* --------- HERO SECTION ----------*/}
       <section>
-        <CompareSlider
+        <CompareImages
           firstImage={hero_sin_vino}
           secondImage={hero_sin_vino_}
-          firstImageClassName="object-fill"
-          secondImageClassname="object-fill "
+          firstImageClassName="object-cover z-20"
+          secondImageClassname="object-cover "
           className="h-[calc(100vh-3.5rem)] w-full"
         />
       </section>
+
       {/* ----- PRODUCTS DEFINITION SECTION ------------------- */}
       <section className="relative">
         <MaxWidthWrapper className="py-24  max-w-screen-2xl">
@@ -31,72 +30,34 @@ function Home() {
             strongTitle={"Productos"}
             subtitleHeader={"descubre"}
           />
-          <CarouselCards data={PRODUCTS_FOR_SALE} />
+          <ProductsCardsInfo data={PRODUCTS_FOR_SALE} />
         </MaxWidthWrapper>
       </section>
 
-      <section>
-        <CompareSlider
-          firstImage={hero_sin_vino}
-          secondImage={hero_sin_vino_}
-          firstImageClassName="object-fill"
-          secondImageClassname="object-fill "
-          className="h-[calc(100vh-3.5rem)] w-full"
-        />
+      <section className="h-[calc(120vh-3.5rem)] w-full">
+        <MaxWidthWrapper className="py-24  max-w-screen-2xl">
+          <HeaderSection
+            className={"pb-14"}
+            titleHeader={"Nuestros "}
+            strongTitle={"Productos"}
+            subtitleHeader={"descubre"}
+          />
+          <ProductBanner />
+        </MaxWidthWrapper>
       </section>
 
-      {/* ----- PRODUCTS DEFINITION SECTION ------------------- */}
-      {/* <section className="relative">
-        <MaxWidthWrapper className="py-24">
-          <h2 className="text-2xl">Nuestros productos</h2>
-
-          <CarouselCards data={ITEMS} />
-        </MaxWidthWrapper>
-      </section> */}
-
-      {/* ----- PRODUCTS DEFINITION SECTION ------------------- */}
-      {/* <section className="relative">
-        <MaxWidthWrapper className="py-24">
-          <h2 className="text-2xl">Nuestros productos</h2>
-
-          <CarouselCards data={ITEMS} />
-        </MaxWidthWrapper>
-      </section> */}
+      {/* ----- PROMO BANNER ------------------- */}
 
       {/* ----- PRODUCTS DEFINITION SECTION ------------------- */}
 
-      {/* <section className="relative">
-        <MaxWidthWrapper className="">
-          <h2 className="text-2xl">Nuestros productos</h2>
+      {/* ----- PRODUCTS DEFINITION SECTION ------------------- */}
 
-          <CarouselCards data={ITEMS} />
-        </MaxWidthWrapper>
-      </section> */}
-
-      <section>
-        <CompareSlider
-          firstImage={hero_sin_vino}
-          secondImage={hero_sin_vino_}
-          firstImageClassName="object-fill"
-          secondImageClassname="object-fill "
-          className="h-[calc(100vh-3.5rem)] w-full"
-        />
-      </section>
-
-      <section>
-        <CompareSlider
-          firstImage={hero_sin_vino}
-          secondImage={hero_sin_vino_}
-          firstImageClassName="object-fill"
-          secondImageClassname="object-fill "
-          className="h-[calc(100vh-3.5rem)] w-full"
-        />
-      </section>
+      {/* ----- PRODUCTS DEFINITION SECTION ------------------- */}
 
       {/* --------- VALUE PROPOSITION SECTION ----------*/}
-      <section className="mb-11">
+      {/* <section className="mb-11">
         <CustomerReviewSection />
-      </section>
+      </section> */}
     </>
   );
 }

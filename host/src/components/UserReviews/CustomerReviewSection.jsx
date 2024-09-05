@@ -1,6 +1,6 @@
 import React from "react";
 import MaxWidthWrapper from "../UI/MaxWidthWrapper";
-import winebottleImage from "../../assets/winebottle3.jpg";
+import winebottleImage from "../../../public/assets/winebottle3.jpg";
 import { UserReview } from "./UserReview";
 
 export const CustomerReviewSection = () => {
