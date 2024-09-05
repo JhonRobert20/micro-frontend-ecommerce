@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../../lib/utils/utils.js";
-
+import Button from "host/Button";
 const ImageContent = ({
   imageSrc,
   imageClassName,
@@ -32,12 +32,14 @@ const ImageContent = ({
     <div className={cn("absolute", textPosition)}>
       <p className="tracking-widest text-3xl leading-[3rem]">{textContent}</p>
       {buttonLabel && (
-        <button
-          onClick={buttonOnClick}
-          className="py-4 px-8 mt-7 border-[1px] border-skin-decorative hover:border-skin-details rounded-sm bg-skin-details hover:bg-skin-decorative text-skin-base hover:text-skin-base-hover cursor-pointer tracking-widest"
+        <Button
+          onClick={() => console.log("Clicked")}
+          variant="primary"
+          size="large"
+          ariaLabel={buttonLabel}
         >
           {buttonLabel}
-        </button>
+        </Button>
       )}
     </div>
   </motion.div>

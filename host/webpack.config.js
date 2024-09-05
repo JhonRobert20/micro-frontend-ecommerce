@@ -87,6 +87,7 @@ module.exports = (_, argv) => ({
       exposes: {
         "./MaxWidthWrapper": "./src/components/UI/MaxWidthWrapper/index.jsx",
         "./LinkIcon": "./src/components/UI/LinkIcon/index.jsx",
+        "./Button": "./src/components/UI/Button/index.jsx",
       },
       shared: {
         ...deps,
