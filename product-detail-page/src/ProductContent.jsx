@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
-import { getProductById, formatCurrency } from "catalog/products";
+import { getProductById } from "catalog/products";
 import placeAddToCart from "addtocart/placeAddToCart";
 
 export default function PDPContent() {
@@ -34,9 +34,7 @@ export default function PDPContent() {
         <div>
           <div className="flex">
             <h1 className="font-bold text-3xl flex-grow">{product.name}</h1>
-            <div className="font-bold text-3xl flex-end">
-              {formatCurrency(product.price)}
-            </div>
+            <div className="font-bold text-3xl flex-end">{product.price}</div>
           </div>
           <div ref={addToCart}></div>
           <div className="mt-10">{product.description}</div>

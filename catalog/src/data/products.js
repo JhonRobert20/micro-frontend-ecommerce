@@ -5,7 +5,7 @@ export const getProducts = () => {
 };
 
 export const getProductById = (id) => {
-  return fetch(`${API_SERVER}/products/${id}`).then((res) => res.json());
+  return fetch(`${API_SERVER}/get-products/${id}`).then((res) => res.json());
 };
 
 export const currency = new Intl.NumberFormat("en-US", {
