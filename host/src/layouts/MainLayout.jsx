@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "remixicon/fonts/remixicon.css";
 
 import PDPContent from "pdp/ProductContent";
+import ProductsContent from "pdp/ProductsContent";
 import Cart from "cart/Cart";
 import NavBar from "../components/NavBar";
 import UploadFile from "../pages/Admin/UploadFile";
@@ -17,6 +18,7 @@ export function MainLayout({ children }) {
       <NavBar />
       <Routes>
         <Route exact path="/" Component={Home} />
+        <Route path="/products" Component={ProductsContent} />
         <Route path="/products/:id" Component={PDPContent} />
         <Route path="/cart" Component={Cart} />
         <Route path="/login" Component={Login} />

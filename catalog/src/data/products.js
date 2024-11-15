@@ -1,7 +1,7 @@
-const API_SERVER = "http://localhost:8090";
+const API_SERVER = "http://localhost:4242";
 
 export const getProducts = () => {
-  return fetch(`${API_SERVER}/products`).then((res) => res.json());
+  return fetch(`${API_SERVER}/get-products`).then((res) => res.json());
 };
 
 export const getProductById = (id) => {
